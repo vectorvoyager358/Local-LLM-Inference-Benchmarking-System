@@ -1,0 +1,4 @@
+model,prompt_eval_duration,eval_duration,total_duration,load_duration,tokens_per_second,eval_count
+llama3.2:3b,0.09,2.18,2.51,0.2,41.82,90.76
+mistral:7b,0.25,5.02,5.72,0.42,19.33,97.08
+phi3:mini,0.13,2.41,2.68,0.13,38.35,92.28
