@@ -221,3 +221,4 @@ __marimo__/
 .DS_Store
 benchmark.csv
 quality_results.csv
+temperature_study.csv
