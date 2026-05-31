@@ -10,10 +10,7 @@ def query_model(prompt, model):
     result = requests.post("http://localhost:11434/api/generate", json={
         "model": model,
         "prompt": prompt,
-        "stream": False,
-        "options": {
-            "num_predict": 100
-        }
+        "stream": False
     })
     return result.json()
 
