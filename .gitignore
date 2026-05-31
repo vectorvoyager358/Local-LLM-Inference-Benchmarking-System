@@ -222,3 +222,4 @@ __marimo__/
 benchmark.csv
 quality_results.csv
 temperature_study.csv
+ttft_results.csv

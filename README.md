@@ -176,3 +176,34 @@ Example Schema:
   "priority": "high | medium | low",
   "summary": "string"
 }
+
+---
+
+## Time To First Token (TTFT) Study
+
+TTFT measures how long it takes for the first token of a response to be generated after a request is sent.
+
+Two scenarios were measured:
+
+### Cold Start
+
+Model is not already loaded into memory.
+
+### Warm Start
+
+Model is already loaded and initialized.
+
+### Results
+
+| Model | Cold TTFT (s) | Warm TTFT (s) |
+|---------|---------:|---------:|
+| llama3.2:3b | 3.04 | 0.19 |
+| phi3:mini | 3.20 | 0.14 |
+| mistral:7b | 10.34 | 0.68 |
+
+### Observations
+
+- Mistral 7B experienced the largest cold-start overhead.
+- Warm-start TTFT was significantly lower for all models.
+- Most of Mistral's perceived delay came from model loading rather than token generation.
+- Llama 3.2 3B provided the best overall balance between throughput, latency, and response quality.
