@@ -147,3 +147,32 @@ For local inference on the tested hardware, Llama 3.2 3B was the recommended mod
 ### Benchmark Constraints
 
 All benchmarks were executed on a MacBook Pro (M2, 8 GB RAM). Results may vary significantly on systems with more memory, discrete GPUs, or different CPU architectures.
+
+---
+
+## Structured Output Validation
+
+Implemented a structured output pipeline for local language models.
+
+Features:
+
+- JSON-only responses
+- Pydantic schema validation
+- Automatic retry on validation failure
+- Graceful failure handling after retry exhaustion
+
+Workflow:
+
+Prompt
+→ JSON Response
+→ Validation
+→ Retry
+→ Success / Failure
+
+Example Schema:
+
+{
+  "title": "string",
+  "priority": "high | medium | low",
+  "summary": "string"
+}
