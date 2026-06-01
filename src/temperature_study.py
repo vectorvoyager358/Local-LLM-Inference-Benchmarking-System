@@ -1,5 +1,8 @@
-import requests
 import csv
+
+import requests
+
+from paths import DATA_DIR
 
 TEMPERATURE_PROMPTS = [
     "Explain recursion in exactly 2 sentences.",
@@ -26,7 +29,7 @@ def query_model(prompt, temperature):
 
 
 if __name__ == "__main__":
-    csv_file = "temperature_study.csv"
+    csv_file = DATA_DIR / "temperature_study.csv"
     prompts = TEMPERATURE_PROMPTS
     temperatures = [0.0, 0.7]
 

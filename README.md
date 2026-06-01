@@ -1,5 +1,21 @@
 # Local LLM Inference & Benchmarking System
 
+## Repository Structure
+
+src/     -> benchmarking and evaluation scripts
+data/    -> benchmark outputs and evaluation scores
+docs/    -> supporting documentation
+
+Run scripts from the repository root, for example:
+
+```bash
+python src/app.py
+python src/benchmark_analysis.py
+python src/quality_evaluation.py
+```
+
+---
+
 A local AI benchmarking project that evaluates Small Language Models (SLMs) running entirely offline using Ollama.
 
 The project compares model performance, throughput, latency, and response quality across multiple local models.

@@ -1,7 +1,10 @@
+import csv
 import json
 import time
-import csv
+
 import requests
+
+from paths import DATA_DIR
 
 
 MODELS = [
@@ -58,7 +61,7 @@ def measure_ttft(model, prompt):
 
 
 if __name__ == "__main__":
-    csv_file = "ttft_results.csv"
+    csv_file = DATA_DIR / "ttft_results.csv"
 
     with open(csv_file, "a", newline="") as f:
         writer = csv.writer(f)

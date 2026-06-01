@@ -1,7 +1,10 @@
 import csv
 import time
+
 import psutil
 import requests
+
+from paths import DATA_DIR
 
 
 MODELS = [
@@ -39,7 +42,7 @@ def load_model(model):
 
 
 if __name__ == "__main__":
-    csv_file = "memory_results.csv"
+    csv_file = DATA_DIR / "memory_results.csv"
 
     with open(csv_file, "a", newline="") as f:
         writer = csv.writer(f)
