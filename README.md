@@ -4,6 +4,8 @@ A local AI benchmarking project that evaluates Small Language Models (SLMs) runn
 
 The project compares model performance, throughput, latency, and response quality across multiple local models.
 
+For the full methodology, analysis, and conclusions, see the [Technical Report](technical_report.md).
+
 ---
 
 ## Models Evaluated
@@ -179,6 +181,20 @@ Example Schema:
 
 ---
 
+## Temperature Study
+
+A comparison was performed using temperature 0.0 and 0.7.
+
+### Observations
+
+- Factual prompts showed little variation between temperatures.
+- Creative prompts produced noticeably different wording and structure.
+- Incorrect reasoning remained incorrect across temperatures.
+- Temperature changes did not improve structured output reliability.
+- Lower temperatures produced more deterministic outputs and are preferred for structured generation workflows.
+
+---
+
 ## Time To First Token (TTFT) Study
 
 TTFT measures how long it takes for the first token of a response to be generated after a request is sent.
@@ -207,3 +223,21 @@ Model is already loaded and initialized.
 - Warm-start TTFT was significantly lower for all models.
 - Most of Mistral's perceived delay came from model loading rather than token generation.
 - Llama 3.2 3B provided the best overall balance between throughput, latency, and response quality.
+
+---
+
+## Memory Usage Comparison
+
+Memory measurements were collected using a controlled single-model loading approach with `ollama ps`.
+
+| Model | Memory Usage |
+|---------|---------:|
+| llama3.2:3b | 2.8 GB |
+| phi3:mini | 4.0 GB |
+| mistral:7b | 5.1 GB |
+
+### Key Findings
+
+- Mistral 7B consumed the most memory.
+- Llama 3.2 3B consumed the least memory among the tested models.
+- Llama 3.2 3B provided the strongest overall balance between memory usage, throughput, and response quality.
