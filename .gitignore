@@ -219,8 +219,8 @@ __marimo__/
 
 
 .DS_Store
-benchmark.csv
-quality_results.csv
-temperature_study.csv
-ttft_results.csv
-memory_results.csv
+data/benchmark.csv
+data/quality_results.csv
+data/temperature_study.csv
+data/ttft_results.csv
+data/memory_results.csv

@@ -2,6 +2,7 @@ import subprocess
 import time
 import csv
 import requests
+from paths import DATA_DIR
 from prompts import TEST_PROMPTS
 
 
@@ -33,7 +34,7 @@ if __name__ == "__main__":
         "mistral:7b"
     ]
 
-    csv_file = "benchmark.csv"
+    csv_file = DATA_DIR / "benchmark.csv"
 
     with open(csv_file, "a", newline="") as f:
         writer = csv.writer(f)

@@ -1,6 +1,8 @@
+import csv
+
 from app import query_model
 from evaluation_prompts import EVALUATION_PROMPTS
-import csv
+from paths import DATA_DIR
 
 prompts = EVALUATION_PROMPTS
 models = [
@@ -9,7 +11,7 @@ models = [
     "mistral:7b"
 ]
 
-csv_file = "quality_results.csv"
+csv_file = DATA_DIR / "quality_results.csv"
 
 with open(csv_file, "a", newline="") as f:
     writer = csv.writer(f)
