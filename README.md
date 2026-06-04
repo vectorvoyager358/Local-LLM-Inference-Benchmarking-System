@@ -3,7 +3,9 @@
 ## Repository Structure
 
 src/     -> benchmarking and evaluation scripts
+
 data/    -> benchmark outputs and evaluation scores
+
 docs/    -> supporting documentation
 
 Run scripts from the repository root, for example:
